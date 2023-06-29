@@ -1,0 +1,41 @@
+### IntelliJ IDEA ###
+/javaudemyinit/out/
+/javaudemyinit/!**/src/main/**/out/
+/javaudemyinit/!**/src/test/**/out/
+
+### Eclipse ###
+/javaudemyinit/.apt_generated
+/javaudemyinit/.classpath
+/javaudemyinit/.factorypath
+/javaudemyinit/.project
+/javaudemyinit/.settings
+/javaudemyinit/.springBeans
+/javaudemyinit/.sts4-cache
+/javaudemyinit/bin/
+/javaudemyinit/!**/src/main/**/bin/
+/javaudemyinit/!**/src/test/**/bin/
+
+### NetBeans ###
+/javaudemyinit/nbproject/private/
+/javaudemyinit/nbbuild/
+/javaudemyinit/dist/
+/javaudemyinit/nbdist/
+/javaudemyinit/.nb-gradle/
+/javaudemyinit/.idea
+/javaudemyinit/javaudemyinit.iml
+
+
+### ArrayListCrudRepository ###
+/ArrayListCrudRepository/out/
+/ArrayListCrudRepository/!**/src/main/**/out/
+/ArrayListCrudRepository/!**/src/test/**/out/
+/ArrayListCrudRepository/.idea/
+/ArrayListCrudRepository/ArrayListCrudRepository.iml
+
+### Interfaces ###
+/Interfaces/out/
+/Interfaces/!**/src/main/**/out/
+/Interfaces/!**/src/test/**/out/
+/Interfaces/.idea/
+/Interfaces/Interfaces.iml
+
