@@ -1,16 +1,14 @@
 package shoppingcart.repository;
 
-import shoppingcart.model.Product;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductListRepository<T> implements HandleableRepository<T> {
+public class GroceryBagRepository<T> implements HandleableRepository<T> {
 
     List<T> products;
 
 
-    public ProductListRepository() {
+    public GroceryBagRepository() {
         products = new ArrayList<>();
     }
 
