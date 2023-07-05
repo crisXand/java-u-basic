@@ -39,3 +39,10 @@
 /Interfaces/.idea/
 /Interfaces/Interfaces.iml
 
+### Interfaces ###
+/javajdbc/out/
+/javajdbc/!**/src/main/**/out/
+/javajdbc/!**/src/test/**/out/
+/javajdbc/.idea/
+/javajdbc/javajdbc.iml
+
