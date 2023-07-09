@@ -46,3 +46,16 @@
 /javajdbc/.idea/
 /javajdbc/javajdbc.iml
 
+###	webapp 	###
+/webapp/target/
+/webapp/!.mvn/wrapper/maven-wrapper.jar
+/webapp/!**/src/main/**/target/
+/webapp/!**/src/test/**/target/
+/webapp/.idea/modules.xml
+/webapp/.idea/
+/webapp/*.iws
+/webapp/*.iml
+/webapp/*.ipr
+
+
+
