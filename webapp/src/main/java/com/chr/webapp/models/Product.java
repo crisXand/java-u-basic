@@ -1,5 +1,7 @@
 package com.chr.webapp.models;
 
+import java.util.Objects;
+
 public class Product {
 	private int id;
 	private String name;
@@ -21,7 +23,9 @@ public class Product {
 	public String getName() {
 		return name;
 	}
-
+	public void setId(int id) {
+		this.id = id;
+	}
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -45,6 +49,6 @@ public class Product {
 	public int getId() {
 		return id;
 	}
-	
+
 	
 }

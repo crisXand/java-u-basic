@@ -1,11 +1,11 @@
 package com.chr.webapp.services;
 
-import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
 import com.chr.webapp.models.Product;
 
 public interface ProductService{
 	List<Product> findAll() ;
-	Product find( int id ) ;
+	Optional<Product> find( int id ) ;
 }

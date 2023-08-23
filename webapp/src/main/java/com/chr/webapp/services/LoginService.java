@@ -6,5 +6,5 @@ import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 
 public interface LoginService {
-	Optional<Cookie> getCookie(HttpServletRequest req, String cookieName);
+	Optional<String> getUser(HttpServletRequest req, String nameAttribute);
 }

@@ -4,9 +4,9 @@
     %>
 
 <% 	
-List<Product> products = (List<Product>) request.getAttribute("products"); 
-LoginService auth = new LoginServiceImp();
-Optional<Cookie> cookieOptional = auth.getCookie(request, "username");
+	List<Product> products = (List<Product>) request.getAttribute("products"); 
+	LoginService auth = new LoginSessionServiceImpl();
+	Optional<String> cookieOptional = auth.getUser(request, "user");
 %>    
 
 <!DOCTYPE html>
@@ -19,8 +19,8 @@ Optional<Cookie> cookieOptional = auth.getCookie(request, "username");
 	<nav>
 		<ul>
 		<% if(cookieOptional.isPresent()) {%>
-			<li><%= cookieOptional.get().getValue() %></li>
-			<li><a href="<%=request.getServletContext().getContextPath() %>/logout">Logout</a></li>
+			<li><%= cookieOptional.get() %></li>
+			<li><a href="<%=request.getServletContext().getContextPath() %>/session/logout">Logout</a></li>
 		<%} %>
 		</ul>
 	</nav>
@@ -32,6 +32,7 @@ Optional<Cookie> cookieOptional = auth.getCookie(request, "username");
 			<td>Nombre</td>
 			<% if(cookieOptional.isPresent()) {%>
 			<td>Precio </td>
+			<td>Accion</td>	
 			<%} %>
 		</tr>
 		<tbody>
@@ -41,11 +42,14 @@ Optional<Cookie> cookieOptional = auth.getCookie(request, "username");
 					<td><%= p.getName() %></td>
 					<% if(cookieOptional.isPresent()) {%>
 					<td><%= p.getPrice()%> </td>
+					<td><a href = "<%= request.getContextPath()%>/shopping/add-product?id=<%=p.getId()%>">Add to car</a></td>
 					<%} %>
 				</tr>	
 			<% } %>
 		</tbody>
 		
 	</table>
+	<h1> <%= (String)request.getAttribute("requestAttribute") %></h1>
+	<h1> <%= request.getServletContext().getAttribute("contextAttribute") %></h1>
 </body>
 </html>
