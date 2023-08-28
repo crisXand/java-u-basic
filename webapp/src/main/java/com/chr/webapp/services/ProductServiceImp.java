@@ -3,7 +3,6 @@ package com.chr.webapp.services;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,23 +31,22 @@ public class ProductServiceImp implements ProductService{
 			
 		}catch (SQLException e) {
 			// TODO: handle exception
-			e.printStackTrace();
+			throw new ServiceJdbcException(e.getMessage(), e.getCause());
 		}
-		return null;
 		
 		
 	}
 
 	@Override
-	public Optional<Product> find(int id){
+	public Optional<Product> find(int id) {
 		// TODO Auto-generated method stub
 		try {
 			return Optional.ofNullable(productRepository.find(id));
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new ServiceJdbcException(e.getMessage(), e.getCause());
 		}
-		return null;
+		
 		//return products.stream().filter(p -> p.getId() == id ).findAny();
 	}
 

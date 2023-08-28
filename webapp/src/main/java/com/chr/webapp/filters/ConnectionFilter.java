@@ -12,6 +12,7 @@ import jakarta.servlet.ServletResponse;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletResponse;
 
+import com.chr.webapp.services.ServiceJdbcException;
 import com.chr.webapp.utils.*;
 @WebFilter("/*")
 public class ConnectionFilter implements Filter{
@@ -23,12 +24,13 @@ public class ConnectionFilter implements Filter{
 			if (connection.getAutoCommit()) {
 				connection.setAutoCommit(false);
 			}
-			System.out.println("conexion");
+			
 			try {
 				request.setAttribute("connection", connection);
 				chain.doFilter(request, response);
 				connection.commit();
-			} catch (SQLException e) {
+			} catch (SQLException | ServiceJdbcException e) { //debemos manejar la excepcion creada 
+				
 				connection.rollback();
 				((HttpServletResponse) response).sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, e.getMessage());
 				// TODO: handle exception

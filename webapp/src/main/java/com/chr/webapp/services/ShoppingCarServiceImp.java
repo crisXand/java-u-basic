@@ -1,6 +1,7 @@
 package com.chr.webapp.services;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.Optional;
 
 import com.chr.webapp.models.CarItem;
